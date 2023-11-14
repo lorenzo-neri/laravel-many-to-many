@@ -25,11 +25,16 @@
                 <div class="col">
                     <h1>{{ $project->title }}</h1>
 
-                    <div>Technologies used:
-                        <strong>
-                            {{ $project->tech }}
-                        </strong>
-                    </div>
+                    @forelse ($project->technologies as $technology)
+                        <li class="badge bg-secondary">
+                            <i class="fas fa-tag fa-xs fa-fw"></i>
+                            {{ $technology->tech }}
+                        </li>
+                    @empty
+                        {{ dd($technology->tech) }}
+                        <li class="badge bg-secondary">Untagged</li>
+                    @endforelse
+
 
                     <p>Description:
                         {{ $project->description }}

@@ -27,6 +27,7 @@ class StoreProjectRequest extends FormRequest
             'description' => 'nullable|bail|min:3|max:500',
             /* 'tech' => 'nullable|bail|min:3|max:200', */
             'type_id' => ['nullable', 'exists:types,id'],
+            'technologies' => ['nullable', 'exists:technologies,id'],
             'link_github' => 'nullable|bail|url:http,https',
             'link_project_online' => 'nullable|bail|url:http,https',
         ];

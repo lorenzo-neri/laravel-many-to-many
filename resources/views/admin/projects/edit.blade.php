@@ -123,6 +123,26 @@
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
 
+                    <div class="mb-3">
+                        <label for="technologies" class="form-label">Technologies</label>
+                        <select multiple class="form-select" name="technologies[]" id="technologies">
+                            <option disabled>Select one</option>
+
+                            <!-- TODO: Improve validation outputs -->
+                            @foreach ($technologies as $technology)
+                                <option value="{{ $technology->id }}"
+                                    {{ in_array($technology->id, old('technologies', [])) ? 'selected' : '' }}>
+                                    {{ $technology->tech }}
+                                </option>
+                            @endforeach
+
+
+                        </select>
+                    </div>
+                    @error('technologies')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+
                     <button type="submit" class="btn btn-success my-3">SAVE</button>
                     <a class="btn btn-primary" href="{{ route('admin.projects.index') }}">CANCEL</a>
 
