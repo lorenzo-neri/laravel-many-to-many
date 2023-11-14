@@ -31,7 +31,7 @@
                             {{ $technology->tech }}
                         </li>
                     @empty
-                        {{ dd($technology->tech) }}
+                        {{-- {{ vard_dump($technology->tech) }} --}}
                         <li class="badge bg-secondary">Untagged</li>
                     @endforelse
 
