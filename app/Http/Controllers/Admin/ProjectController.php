@@ -56,6 +56,8 @@ class ProjectController extends Controller
 
         $newProject = Project::create($valData);
 
+        $newProject->technologies()->attach($request->technologies);
+
         return to_route('admin.projects.index')->with('status', 'Progetto aggiunto con successo ✅');
     }
 
@@ -108,6 +110,8 @@ class ProjectController extends Controller
         // dd($valData);
         // AGGIORNA L'ENTITA' CON I VALORI DI $valData
         $project->update($valData);
+
+        $project->technologies()->attach($request->technologies);
         return to_route('admin.projects.index')->with('status', 'Progetto modificato con successo 🥳');
     }
 
