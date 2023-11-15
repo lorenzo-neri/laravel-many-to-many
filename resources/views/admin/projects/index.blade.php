@@ -40,12 +40,21 @@
 
                             {{-- posso fare a meno della condizione? #todo --}}
                             <td class="text-center align-middle">
-                                @if (str_contains($project->thumb, 'http'))
+                                {{--    @if ($condition)
+                                @endif --}}
+
+                                @if ($project->thumb)
+                                    <img width="100" src="{{ asset('storage/' . $project->thumb) }}"
+                                        alt="{{ $project->title }}">
+                                @else
+                                    <i class="fa-solid fa-image fa-2xl"></i>
+                                @endif
+                            </td>
+                            {{--  @if (str_contains($project->thumb, 'http'))
                                     <img width="100" src="{{ $project->thumb }}" alt="{{ $project->title }}">
                                 @else
                                     <img width="100" src="{{ asset('storage/' . $project->thumb) }}">
-                                @endif
-                            </td>
+                                @endif --}}
 
                             <td class="align-middle">{{ $project->title }}</td>
 

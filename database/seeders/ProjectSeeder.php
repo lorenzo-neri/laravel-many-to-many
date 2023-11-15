@@ -21,7 +21,15 @@ class ProjectSeeder extends Seeder
 
             $project->title = $faker->realText(50);
             $project->slug = Str::slug($project->title, '-');
+
+
             // $project->thumb = 'thumbs/' . $faker->image('public/storage/thumbs', category: 'Projects', fullPath: 'false');
+
+            #=
+
+            /* $project->thumb = 'thumbs/' . $faker->image('public/storage/thumbs', category: 'Project', fullPath: false); */
+
+
             $project->thumb = $faker->imageUrl(category: 'Projects');
             // dd($project->thumb);
             $project->description = $faker->realText();

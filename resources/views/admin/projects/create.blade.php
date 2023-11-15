@@ -55,18 +55,8 @@
 
                     </div>
 
-                    {{-- <div class="mb-3">
 
-                        <label for="tech" class="form-label"><strong>Technologies Used</strong></label>
-
-                        <input type="text" class="form-control" name="tech" id="tech" aria-describedby="helpTech"
-                            placeholder="Tech used creating the New Project">
-
-                        @error('tech')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div> --}}
-
+                    {{-- IMG --}}
                     <div class="mb-3">
 
                         <label for="thumb" class="form-label"><strong>Choose a Thumbnail image file</strong></label>
@@ -80,13 +70,7 @@
 
                     </div>
 
-                    {{-- <div class="mb-3">
-                        <label for="projectlink" class="form-label">Link Progetto</label>
-                        {{-- utilizziamo la funzione old per ridare all'utente i valori inseriti prima,in caso di errore 
-                         <input type="url" class="form-control" name="projectlink" id="projectlink" aria-describedby="helpId" placeholder="Scrivi una descrizione per il tuo progetto" value="{{ old('projectlink') }}">
-                         <small id="projectlinkHelper" class="form-text text-muted">Scrivi il link del tuo progetto github</small>
-                         </div> --}}
-
+                    {{-- LINK_GITHUB --}}
                     <div class="mb-3">
 
                         <label for="link_github" class="form-label"><strong>Link GitHub</strong></label>
@@ -101,6 +85,7 @@
 
                     </div>
 
+                    {{-- LINK_PROJECT_ONLINE --}}
                     <div class="mb-3">
 
                         <label for="link_project_online" class="form-label"><strong>Link WEB</strong></label>
