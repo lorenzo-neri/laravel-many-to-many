@@ -138,4 +138,20 @@ class ProjectController extends Controller
         $project->delete();
         return to_route('admin.projects.index')->with('status', 'Progetto eliminato correttamente 🚮');
     }
+
+    public function recycle()
+    {
+        $trashed_projects = Project::onlyTrashed()->orderByDesc('id')->paginate(5);
+
+        return view('admin.projects.recycle', compact('trashed_projects'));
+    }
+
+    /* public function restore($id)
+    {
+
+        $project = Project::onlyTrashed()->find($id);
+        $project->restore();
+
+        return to_route('admin.projects.recycle')->with('status', 'Well Done, Element Restored Succeffully');
+    } */
 }

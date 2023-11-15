@@ -26,12 +26,17 @@ Route::middleware(['auth', 'verified']) #per utenti loggati e verificati
     ->prefix('admin') #prefix degli url iniziano con '/admin/'
     ->name('admin.') #nome delle rotte inizia con 'admin.'
     ->group(function () {
-
+        //after login
         Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-        //All routes will start with '/admin/...'
-        //route('admin.dashboard')
+        //admin/projects - show project
         Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
+
+        //amdin/projects/recycle - show trashed projects
+        Route::get('projects/recycle', [ProjectController::class, 'recycle'])->name('projects.recycle');
+
+        //restore trashed projects
+        Route::get('projects/restore/{id}', [ProjectController::class, 'restore'])->name('projects.restore');
     });
 
 
