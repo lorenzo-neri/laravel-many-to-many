@@ -107,11 +107,20 @@ class ProjectController extends Controller
             $valData['thumb'] = $path;
         }
 
+
+        // eseguo un detach per rimuovere tutti i vecchi collegamenti con le tecnologie
+        $project->technologies()->detach();
+
+
         // dd($valData);
         // AGGIORNA L'ENTITA' CON I VALORI DI $valData
         $project->update($valData);
 
+
+        // prendo i dati della richiesta e lo passo nel model Technology e tramite attach, creo il collegamento nella tabella condivisa tra project e tecnology
         $project->technologies()->attach($request->technologies);
+
+
         return to_route('admin.projects.index')->with('status', 'Progetto modificato con successo 🥳');
     }
 
@@ -123,6 +132,9 @@ class ProjectController extends Controller
         if (!isNull($project->thumb)) {
             Storage::delete($project->thumb);
         }
+
+        $project->technologies()->detach();
+
         $project->delete();
         return to_route('admin.projects.index')->with('status', 'Progetto eliminato correttamente 🚮');
     }

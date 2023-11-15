@@ -89,6 +89,8 @@
                         <a class="w-100 btn btn-secondary" href="{{ $project->link_project_online }}">
                             <i class="fa-solid fa-link fa-xl"></i>
                         </a>
+
+                        {{-- <a class="btn btn-danger" href="https://github.com/lorenzo-neri">test</a> --}}
                     </div>
                 </div>
             </div>

@@ -44,7 +44,7 @@
                     <div class="card-header"><i class="fa-solid fa-diagram-project"></i> {{ __('Projects') }}</div>
 
                     <div class="card-body">
-                        <p>Number of Projects registered<strong>{{ $total_projects }}</strong>
+                        <p>Number of Projects registered: <strong>{{ $total_projects }}</strong>
                         </p>
                     </div>
                 </div>

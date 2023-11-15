@@ -80,15 +80,22 @@
 
                     </div>
 
+                    {{-- <div class="mb-3">
+                        <label for="projectlink" class="form-label">Link Progetto</label>
+                        {{-- utilizziamo la funzione old per ridare all'utente i valori inseriti prima,in caso di errore 
+                         <input type="url" class="form-control" name="projectlink" id="projectlink" aria-describedby="helpId" placeholder="Scrivi una descrizione per il tuo progetto" value="{{ old('projectlink') }}">
+                         <small id="projectlinkHelper" class="form-text text-muted">Scrivi il link del tuo progetto github</small>
+                         </div> --}}
+
                     <div class="mb-3">
 
-                        <label for="github_link" class="form-label"><strong>Link GitHub</strong></label>
+                        <label for="link_github" class="form-label"><strong>Link GitHub</strong></label>
 
-                        <input type="url" class="form-control" name="github_link" id="github_link"
+                        <input type="url" class="form-control" name="link_github" id="link_github"
                             aria-describedby="helpGithubLink" placeholder="GitHub link to the New Project" required
-                            value="{{ old('github_link') }}">
+                            value="{{ old('link_github') }}">
 
-                        @error('github_link')
+                        @error('link_github')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
 
@@ -96,13 +103,13 @@
 
                     <div class="mb-3">
 
-                        <label for="web_link" class="form-label"><strong>Link WEB</strong></label>
+                        <label for="link_project_online" class="form-label"><strong>Link WEB</strong></label>
 
-                        <input type="url" class="form-control" name="web_link" id="web_link"
+                        <input type="url" class="form-control" name="link_project_online" id="link_project_online"
                             aria-describedby="helpWebLink" placeholder="Web link to the New Project" required
-                            value="{{ old('web_link') }}">
+                            value="{{ old('link_project_online') }}">
 
-                        @error('web_link')
+                        @error('link_project_online')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
 
@@ -126,6 +133,9 @@
                     @error('type_id')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
+
+
+
 
 
                     <div class="mb-3">
