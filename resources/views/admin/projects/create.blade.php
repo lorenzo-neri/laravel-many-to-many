@@ -76,7 +76,7 @@
                         <label for="link_github" class="form-label"><strong>Link GitHub</strong></label>
 
                         <input type="url" class="form-control" name="link_github" id="link_github"
-                            aria-describedby="helpGithubLink" placeholder="GitHub link to the New Project" required
+                            aria-describedby="helpGithubLink" placeholder="GitHub link to the New Project"
                             value="{{ old('link_github') }}">
 
                         @error('link_github')
@@ -91,7 +91,7 @@
                         <label for="link_project_online" class="form-label"><strong>Link WEB</strong></label>
 
                         <input type="url" class="form-control" name="link_project_online" id="link_project_online"
-                            aria-describedby="helpWebLink" placeholder="Web link to the New Project" required
+                            aria-describedby="helpWebLink" placeholder="Web link to the New Project"
                             value="{{ old('link_project_online') }}">
 
                         @error('link_project_online')
