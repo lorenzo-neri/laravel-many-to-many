@@ -57,8 +57,10 @@
                                 </button>
 
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="{{ url('admin') }}">{{ __('Dashboard') }}</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
+                                    </li>
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a></li>
                                     <li><a class="dropdown-item" href="{{ url('/') }}">{{ __('Home') }}</a>
                                     </li>
                                     <li>
@@ -92,20 +94,29 @@
         -->
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
                     <div class="position-sticky pt-3">
-                        <ul class="nav flex-column">
-                            <li class="nav-item fs-4">
+                        <ul class="nav flex-column fs-4">
+                            <li class="nav-item ">
 
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.dashboard') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> {{ __('Dashboard') }}
                                 </a>
+                            </li>
+                            <li>
 
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.projects.index' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.projects.index') }}">
                                     <i class="fa-solid fa-diagram-project fa-lg fa-fw"></i> {{ __('Projects') }}
                                 </a>
-
                             </li>
+                            <li>
+
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.projects.recycle' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.projects.recycle') }}">
+                                    <i class="fa-solid fa-trash-arrow-up"></i> {{ __('Soft Bin') }}
+                                </a>
+                            </li>
+
 
                         </ul>
 

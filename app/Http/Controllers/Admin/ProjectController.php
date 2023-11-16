@@ -141,11 +141,12 @@ class ProjectController extends Controller
 
     public function recycle()
     {
+
         $trashed_projects = Project::onlyTrashed()->orderByDesc('id')->paginate(5);
 
         return view('admin.projects.recycle', compact('trashed_projects'));
     }
-
+}
     /* public function restore($id)
     {
 
@@ -154,4 +155,3 @@ class ProjectController extends Controller
 
         return to_route('admin.projects.recycle')->with('status', 'Well Done, Element Restored Succeffully');
     } */
-}

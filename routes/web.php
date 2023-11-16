@@ -32,11 +32,11 @@ Route::middleware(['auth', 'verified']) #per utenti loggati e verificati
         //admin/projects - show project
         Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
 
-        //amdin/projects/recycle - show trashed projects
-        Route::get('projects/recycle', [ProjectController::class, 'recycle'])->name('projects.recycle');
+        //amdin/recycle - show trashed projects
+        Route::get('recycle', [ProjectController::class, 'recycle'])->name('projects.recycle');
 
         //restore trashed projects
-        Route::get('projects/restore/{id}', [ProjectController::class, 'restore'])->name('projects.restore');
+        //Route::get('projects/restore/{id}', [ProjectController::class, 'restore'])->name('projects.restore');
     });
 
 
