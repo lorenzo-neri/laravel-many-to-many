@@ -56,6 +56,8 @@ class ProjectController extends Controller
 
         $newProject = Project::create($valData);
 
+        //dd($newProject);
+
         $newProject->technologies()->attach($request->technologies);
 
         return to_route('admin.projects.index')->with('status', 'Progetto aggiunto con successo ✅');
@@ -146,12 +148,15 @@ class ProjectController extends Controller
 
         return view('admin.projects.recycle', compact('trashed_projects'));
     }
-}
-    /* public function restore($id)
+
+    public function restore($id)
     {
 
         $project = Project::onlyTrashed()->find($id);
+        //dd($project);
         $project->restore();
 
-        return to_route('admin.projects.recycle')->with('status', 'Well Done, Element Restored Succeffully');
-    } */
+
+        return to_route('admin.projects.recycle')->with('status', 'Elemento riciclato con successo ♻️');
+    }
+}

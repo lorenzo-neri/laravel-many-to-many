@@ -53,10 +53,10 @@
                             <td class="align-middle">{{ $project->deleted_at }}</td>
 
 
-                            {{-- SHOW --}}
+                            {{-- RESTORE --}}
                             <td class="align-middle text-center">
-                                <a class="btn btn-primary" href="{{ route('admin.projects.show', $project->slug) }}"><i
-                                        class="fa-solid fa-magnifying-glass"></i></a>
+                                <a class="btn btn-primary" href="{{ route('admin.projects.restore', $project->id) }}"><i
+                                        class="fa-solid fa-recycle"></i></a>
 
                                 {{-- EDIT --}}
                                 <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->slug) }}"><i

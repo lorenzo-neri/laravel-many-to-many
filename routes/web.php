@@ -36,7 +36,7 @@ Route::middleware(['auth', 'verified']) #per utenti loggati e verificati
         Route::get('recycle', [ProjectController::class, 'recycle'])->name('projects.recycle');
 
         //restore trashed projects
-        //Route::get('projects/restore/{id}', [ProjectController::class, 'restore'])->name('projects.restore');
+        Route::get('projects/restore/{id}', [ProjectController::class, 'restore'])->name('projects.restore');
     });
 
 
