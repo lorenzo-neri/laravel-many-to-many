@@ -59,17 +59,17 @@
                                         class="fa-solid fa-recycle"></i></a>
 
                                 {{-- EDIT --}}
-                                <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->slug) }}"><i
+                                {{-- <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->slug) }}"><i
                                         class="fa-solid fa-pen-to-square"></i></a>
-
+ --}}
 
                                 {{-- DELETE --}}
                                 {{-- <a class="btn btn-danger" href="{{ route('admin.projects.destroy', $project) }}">Delete</a> --}}
 
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                {{--  <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                     data-bs-target="#modalId-{{ $project->id }}">
                                     <i class="fa-solid fa-trash"></i>
-                                </button>
+                                </button> --}}
 
                                 {{-- MODALE PER ELIMINARE ELEMENTO --}}
                                 <div class="modal fade" id="modalId-{{ $project->id }}" data-backdrop="static"

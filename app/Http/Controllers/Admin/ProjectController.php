@@ -154,9 +154,14 @@ class ProjectController extends Controller
 
         $project = Project::onlyTrashed()->find($id);
         //dd($project);
-        $project->restore();
 
 
-        return to_route('admin.projects.recycle')->with('status', 'Elemento riciclato con successo ♻️');
+        //$project->restore();
+
+        #senza condizione non funziona? #TODO
+        if ($project) {
+            $project->restore();
+            return redirect()->route('admin.projects.recycle')->with('status', 'Elemento riciclato con successo ♻️');
+        }
     }
 }
