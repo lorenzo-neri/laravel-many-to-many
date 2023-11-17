@@ -61,7 +61,7 @@
                                 {{-- EDIT --}}
                                 {{-- <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->slug) }}"><i
                                         class="fa-solid fa-pen-to-square"></i></a>
- --}}
+                                --}}
 
                                 {{-- DELETE --}}
                                 {{-- <a class="btn btn-danger" href="{{ route('admin.projects.destroy', $project) }}">Delete</a> --}}
